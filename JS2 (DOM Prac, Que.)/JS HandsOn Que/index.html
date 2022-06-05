@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM HandsOn Practice</title>
+    <style>
+        .que {
+            color: #E61C11;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .btn {
+            border: 3px solid #000;
+            padding: 5px 10px;
+            background-color: #fff;
+            color: #000;
+            font-weight: 700;
+            transition: all 0.25s;
+        }
+
+        .btn:hover {
+            border-color: violet;
+            background-color: rgb(36, 34, 34);
+            color: #fff;
+            box-shadow: 0 0.7em 0.7em -0.5em blueviolet;
+            transform: translateY(-0.35em);
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #003049;
+            width: 90%;
+            height: 500px;
+            margin: 5px auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .card1,
+        .card2,
+        .card3 {
+            background-color: #80ffdb;
+            width: 11%;
+            height: 20vh;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .clock {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            border: 2px solid black;
+            width: 20%;
+            padding: 10px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .main-div {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dropdown {
+            border: 2px solid black;
+            font-size: medium;
+            font-weight: 600;
+            padding: 5px;
+        }
+
+        .output {
+            margin: 16px 0;
+            color: #003049;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p class="que">( 1 ). Write the code to access element which is having id as "text"</p>
+
+    <h3 id="text">Accessing The Element By ID</h3>
+    <button class="btn" onclick="accessId()">Click For Answer</button>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 2 ). Write the code to access element which is having tag as "h1"</p>
+
+    <h1>Accessing the Element By TagName</h1>
+    <button class="btn" onclick="accessTagName()">Click For Answer</button>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 3 ). Write the code to access element which is having class as "box"</p>
+
+    <h3 class="box">Accessing the Element By ClassName</h3>
+    <button class="btn" onclick="accessClass()">Click For Answer</button>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 4 ). Change the heading from ""Hello"" to ""Hello World"" using DOM functions"</p>
+
+    <h1 id="heading1">Hello</h1>
+    <button class="btn" onclick="accessheading()">Click For Answer</button>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 5 ). Create three cards on HTML page and arrange them using flex property in row or horizontal
+        direction and also create button at the bottom named "Change Flex direction". When user clicks on this button,
+        the cards arrangement should be changed to vertical direction.</p>
+
+    <div class="container" id="box">
+        <div class="card1 col">Box 1</div>
+        <div class="card2 col">Box 2</div>
+        <div class="card3 col">Box 3</div>
+    </div>
+    <div class="center">
+        <button class="btn" onclick="changeDirection()">Change Direction</button>
+    </div>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 6 ). Add one style attribute and give text color as red and id attribute and give the id value as
+        ""heading"" in the above given h1 tag using DOM functions"</p>
+
+    <h1 id="heading">Hello</h1>
+    <button class="btn" onclick="color()">Click For Answer</button>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 7 ). Create an HTML page having content as Hello world and a button named Replace Text. When user
+        will click on this button page content should be changed to "Welcome to Elevation academy"</p>
+
+    <h3 id="replaceText">Hello World</h3>
+    <button class="btn" onclick="changeText()">Replace Text</button>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 8 ). Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep
+        updating every second</p>
+
+    <div class="clock">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <span id="session">AM</span>
+    </div>
+    <br>
+    <hr><br>
+
+
+    <p class="que">( 9 ). Create a select drop down for selecting Year 20-21, 21-22 etc. Print the item text selected
+    </p>
+
+    <div class="main-div">
+        <div>
+            <label for="">Select Year 📅
+                <select name="years" id="years" class="dropdown" onchange="selectElement()">
+                    <option value="">Select One ...</option>
+                    <option value="2019 - 2020">2019 - 2020</option>
+                    <option value="2020 - 2021">2020 - 2021</option>
+                    <option value="2021 - 2022">2021 - 2022</option>
+                </select>
+            </label>
+            <br>
+            <div id="result" class="output"></div>
+        </div>
+    </div>
+    <br>
+    <hr><br>
+
+    <p class="que">( 10 ). "Create a form having name ,email, phone no. , birth year
+    Add validations - phone no. should start with 91 , it should be 10 digits
+    email should be domain prepbytes.com
+    birth year should be > 95"
+    </p>
+
+    <div class="form"></div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

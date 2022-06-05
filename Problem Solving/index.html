@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        1. Find the Smaller Angle =>
+        h = h % 12;
+        
+        var hm = 0.5 * m,
+        hh = 30 * h,
+        ma = 6 * m,
+        sum = Math.abs(hm + hh - ma);
+        return sum ;
+
+        2. Check whether the year is Leap year or not.
+        let ans = "";
+        if(((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0))
+        {
+        ans = "Leap Year";
+        } else {
+        ans = "Non Leap Year";
+        }
+        return ans;
+
+        3.Perfect Number Check.
+        var temp = 0;
+        for(var i=1 ;i<=N /2; i++) { if(N%i===0) { temp +=i; } } if(temp===N && temp !==0) { return "YES" ; } else { return "NO"
+            ; }
+
+        4. Reverse a Number.
+        let str = N +"";
+        let ans = str.split('').reverse().join('');
+        return parseInt(ans);
+
+        5. Substring Check.
+        if( S1.includes(S2) ) {
+            return "YES";
+        } else {
+            return "NO";
+        }
+
+    
+    </div>
+</body>
+
+</html>
